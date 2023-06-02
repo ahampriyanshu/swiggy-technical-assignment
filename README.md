@@ -25,7 +25,20 @@ Design a multiplayer card game that supports multiple players (up to 4) and diff
 
 ## Setup
 
-* Git clone the repo
+
+* Install go
 ```
-git clone git@github.com:ahampriyanshu/swiggy-technical-assignment.git
+brew install go
 ```
+
+* Clone the repo
+```
+git clone git@github.com:ahampriyanshu/swiggy-technical-assignment.git sta
+cd sta
+```
+
+* Run the application
+```
+go run main.go
+```
+
