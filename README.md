@@ -33,12 +33,11 @@ brew install go
 
 * Clone the repo
 ```
-git clone git@github.com:ahampriyanshu/swiggy-technical-assignment.git sta
-cd sta
+git clone git@github.com:ahampriyanshu/swiggy-technical-assignment.git cardgame
+cd cardgame
 ```
 
 * Run the application
 ```
 go run main.go
 ```
-
