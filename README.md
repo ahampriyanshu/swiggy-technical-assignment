@@ -36,10 +36,17 @@ brew install go
 git clone https://github.com/ahampriyanshu/swiggy-technical-assignment.git cardgame
 cd cardgame
 ```
-> Username: ``ahampriyanshu``
-> Fine Grained PAT: ``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``
+**Username:** ``ahampriyanshu``
+**Fine Grained PAT:** ``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``
 
 * Run the application
 ```
 bash build.sh
 ```
+
+## Evaluation Criteria
+
+- [x] Simple design: Does the code have a clear and simple design? Is it easy to understand and modify?
+- [x] Readability: Is the code well-organized and easy to read? Are the naming conventions clear and consistent?
+- [x] Modelling: Are the objects and classes used in the code well-designed and appropriate for the problem at hand?
+- [x] Maintainability: Is the code easy to maintain and modify? Are there any potential areas of concern or technical debt?
