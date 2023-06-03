@@ -1,6 +1,7 @@
 # Swiggy Technical Assignment
 
 ## Problem Statement:
+
 Design a multiplayer card game that supports multiple players (up to 4) and different types of cards (e.g. number cards, action cards, etc.). The game should follow the following rules:
 
 - Each player starts with a hand of 5 cards.
@@ -16,33 +17,41 @@ Design a multiplayer card game that supports multiple players (up to 4) and diff
 - The game ends when one player runs out of cardswho is declared the winner.
 
 - BONUS: Aces, Kings, Queens and Jack are action cards. When one of these is played the following actions occur:
-    - Ace(A): Skip the next player in turn
-    - Kings(K): Reverse the sequence of who plays next 
-    - Queens(Q): +2
-    - Jacks(J): +4
+  - Ace(A): Skip the next player in turn
+  - Kings(K): Reverse the sequence of who plays next
+  - Queens(Q): +2
+  - Jacks(J): +4
 
 **NOTE**: actions are not stackable i.e. if Q is played by player 1 then player two draws two cards and cannot play a Q from his hand on that turn even if available
 
 ## Setup
 
+- Install go
 
-* Install go
 ```
 brew install go
 ```
 
-* Clone the repo
+- Clone the repo
+
+**Username:** `ahampriyanshu`
+
+**Fine Grained PAT:** `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`
+
 ```
 git clone https://github.com/ahampriyanshu/swiggy-technical-assignment.git cardgame
 cd cardgame
 ```
-**Username:** ``ahampriyanshu``
-**Fine Grained PAT:** ``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``
 
-* Run the application
+- Run the application
+
 ```
 bash build.sh
 ```
+
+## Preview
+
+- ![fdsf](./screenrecord.gif)
 
 ## Evaluation Criteria
 
