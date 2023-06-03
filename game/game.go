@@ -1,6 +1,9 @@
 package game
 
-import "fmt"
+import (
+	"cardgame/console"
+	"fmt"
+)
 
 type GamePlay struct {
 	deck        []Card
@@ -9,12 +12,12 @@ type GamePlay struct {
 	discardPile []Card
 }
 
-func (gp *GamePlay) PlayGame() error {
+func (gp *GamePlay) StartGame() error {
 	var numOfPlayers int
 	validInput := false
 
 	for !validInput {
-		fmt.Println("Enter number of players (2-4)")
+		console.Prompt("Enter the number of players [2-4]")
 		_, err := fmt.Scanln(&numOfPlayers)
 		if err != nil {
 			fmt.Println("Invalid input. Please try again.")

@@ -1,4 +1,4 @@
-# swiggy-technical-assignment
+# Swiggy Technical Assignment
 
 ## Problem Statement:
 Design a multiplayer card game that supports multiple players (up to 4) and different types of cards (e.g. number cards, action cards, etc.). The game should follow the following rules:
@@ -33,11 +33,13 @@ brew install go
 
 * Clone the repo
 ```
-git clone git@github.com:ahampriyanshu/swiggy-technical-assignment.git cardgame
+git clone https://github.com/ahampriyanshu/swiggy-technical-assignment.git cardgame
 cd cardgame
 ```
+> Username: ``ahampriyanshu``
+> Fine Grained PAT: ``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``
 
 * Run the application
 ```
-go run main.go
+bash build.sh
 ```

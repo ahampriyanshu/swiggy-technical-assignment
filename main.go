@@ -1,14 +1,14 @@
 package main
 
 import (
+	"cardgame/console"
 	"cardgame/game"
-	"fmt"
 )
 
 func main() {
-	gp := game.GamePlay{}
-	err := gp.PlayGame()
+	game := game.GamePlay{}
+	err := game.StartGame()
 	if err != nil {
-		fmt.Println("Error:", err)
+		console.Error("Couldn't start the game: %s", err)
 	}
 }
