@@ -59,18 +59,22 @@ func (p *Player) giveCards() []Card {
 
 func (gp *GamePlay) playGame() error {
 	var numOfPlayers int
-	fmt.Println("Enter number of players (2-4)")
-	_, err := fmt.Scanln(&numOfPlayers)
-	if err != nil {
-		return err
-	}
+	validInput := false
 
-	if numOfPlayers > 4 {
-		return fmt.Errorf("Maximum four players are allowed! Please try again")
-	}
+	for !validInput {
+		fmt.Println("Enter number of players (2-4)")
+		_, err := fmt.Scanln(&numOfPlayers)
+		if err != nil {
+			fmt.Println("Invalid input. Please try again.")
+			continue
+		}
 
-	if numOfPlayers < 2 {
-		return fmt.Errorf("Minimum two players are required! Please try again")
+		if numOfPlayers < 2 || numOfPlayers > 4 {
+			fmt.Println("Invalid number of players. Please try again.")
+			continue
+		}
+
+		validInput = true
 	}
 
 	deck := NewDeck()
