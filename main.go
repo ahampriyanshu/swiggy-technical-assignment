@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	game := game.GamePlay{}
+	game := game.CardGame{}
 	err := game.StartGame()
 	if err != nil {
 		console.Error("Couldn't start the game: %s", err)

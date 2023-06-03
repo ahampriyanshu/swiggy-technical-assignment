@@ -2,17 +2,18 @@ package game
 
 import (
 	"cardgame/console"
+	"cardgame/constants"
 	"fmt"
 )
 
-type GamePlay struct {
+type CardGame struct {
 	deck        []Card
 	players     []Player
 	drawPile    []Card
 	discardPile []Card
 }
 
-func (gp *GamePlay) StartGame() error {
+func (gp *CardGame) StartGame() error {
 	var numOfPlayers int
 	validInput := false
 
@@ -20,18 +21,20 @@ func (gp *GamePlay) StartGame() error {
 		console.Prompt("Enter the number of players [2-4]")
 		_, err := fmt.Scanln(&numOfPlayers)
 		if err != nil {
-			fmt.Println("Invalid input. Please try again.")
+			console.Error("Invalid input. Please try again.")
 			continue
 		}
 
-		if numOfPlayers < 2 || numOfPlayers > 4 {
-			fmt.Println("Invalid number of players. Please try again.")
+		// Validating the number of users to be in the defined limits
+		if numOfPlayers < constants.PLAYER_MIN_LIMIT || numOfPlayers > constants.PLAYER_MAX_LIMIT {
+			console.Error("Invalid Input. Number of players cannot be less than 2 and more than 4. Please try again...")
 			continue
 		}
 
 		validInput = true
 	}
 
+	// Initializing the deck
 	deck := NewDeck()
 
 	players := make([]Player, numOfPlayers)
@@ -71,7 +74,7 @@ func (gp *GamePlay) StartGame() error {
 		matchedNumber := -1
 		topDiscardCard := discardPile[len(discardPile)-1]
 
-		fmt.Println("Discard deck top card =", discardPile[len(discardPile)-1])
+		console.Warn("Top card of the Discard pile is %v", discardPile[len(discardPile)-1])
 
 		for _, currentPlayerCard := range players[playerTurn].GiveCards() {
 			if currentPlayerCard.number == topDiscardCard.number || currentPlayerCard.suit == topDiscardCard.suit {
@@ -117,7 +120,9 @@ func (gp *GamePlay) StartGame() error {
 			break
 		}
 
-		if matched == true && matchedNumber == 1 {
+		// Bonus conditions
+
+		if matched == true && matchedNumber == constants.ACE {
 			playerTurn += direction
 		}
 
