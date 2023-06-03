@@ -18,10 +18,10 @@ func (p *Player) RemoveCard(card Card) {
 	}
 }
 
-func (p *Player) GiveID() int {
+func (p *Player) GetID() int {
 	return p.id
 }
 
-func (p *Player) GiveCards() []Card {
+func (p *Player) GetCards() []Card {
 	return p.cards
 }
